@@ -23,9 +23,9 @@ class Liquid extends Component {
     render() {
         var stateOfMatter;
 
-        if (this.state.currentTemp <= 32) {
+        if (this.state.currentTemp <= this.props.config.freezing) {
         stateOfMatter = 'Solid';
-        } else if (this.state.currentTemp >= 212) {
+        } else if (this.state.currentTemp >= this.props.config.boiling) {
         stateOfMatter = 'Gas';
         } else {
         stateOfMatter = 'Liquid';
@@ -35,7 +35,7 @@ class Liquid extends Component {
             <div>
                 <input type="text" name="txtTemp" id="txtTemp" value={this.state.currentTemp} onChange={this.setTemperature}/>
                 <p>
-                At {this.state.currentTemp} F, water is considered to be a {stateOfMatter}
+                At {this.state.currentTemp} F, {this.props.config.name} is considered to be a {stateOfMatter}
                 </p>
             </div>
         );
