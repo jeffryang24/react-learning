@@ -7,7 +7,8 @@ export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 export const addTodo = text => ({
   type: ADD_TODO,
-  text
+  text,
+  completed: false
 });
 
 export const toggleTodo = index => ({
