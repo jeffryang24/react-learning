@@ -6,13 +6,13 @@
 <script type="text/babel">
     const rootElement = document.getElementById('root');
 
+    // Function component
+    function Time({time}) {
+        return <div>It is <input value={time} /></div>
+    }
+
     function tick() {
         const time = new Date().toLocaleTimeString();
-    
-        // Function component
-        function Time({time}) {
-            return <div>It is {time}</div>
-        }
 
         const element = <Time time={time} />
 
